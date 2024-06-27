@@ -4,27 +4,27 @@ public class Atividade_Dez {
 
 
         public static void main(String[] args) {
-            String[] palavras = {"radar", "hello", "level", "banana", "ana", "java"};
+           String[] palavras = {"radar", "Anotaram a data da maratona", "level", "A missa é péssima", "Ana"};
 
-            for (String word : palavras) {
-                if (isPalindrome(word)) {
-                    System.out.println(word + " é um palíndromo.");
-                } else {
-                    System.out.println(word + " não é um palíndromo.");
-                }
+        for (String word : palavras) {
+            if (isPalindrome(word.toLowerCase()
+                    .replace(" ", "" )
+                    .replace("é", "e")) {
+                System.out.println(word + " é um palíndromo.");
+            } else {
+                System.out.println(word + " não é um palíndromo.");
             }
-        }
-
-        public static boolean isPalindrome(String word) {
-            int len = word.length();
-
-            for (int i = 0; i < len / 2; i++) {
-                if (word.charAt(i) != word.charAt(len - 1 - i)) {
-                    return false;
-                }
-            }
-            return true;
         }
     }
 
+    public static boolean isPalindrome(String word) {
+        int len = word.length();
 
+        for (int i = 0; i < len / 2; i++) {
+            if (word.charAt(i) != word.charAt(len - 1 - i)) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
